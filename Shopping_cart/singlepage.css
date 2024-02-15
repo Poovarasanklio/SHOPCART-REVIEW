@@ -1,0 +1,534 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+:root {
+    --bg-color: #3b82f6;
+    --white: #ffF;
+  }
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+.navbar{
+    background-color: var(--bg-color);
+    color: var(--white);
+
+    grid-row: 1/span 1;
+}
+.navbar{
+    display: grid;
+    grid-template-columns: 1fr 100px 100px;
+    gap: 10px;
+    align-items: center;
+    padding: 1rem;
+}
+svg{
+    width: 30px;
+}
+.logo{
+    grid-column: 1/ span 1;
+    font-size: 1.7rem;
+    font-weight: 700;
+    letter-spacing: .6px;
+}
+.signup-btn{
+    grid-column: 2/ span 1;
+}
+.login-btn{
+    grid-column: 3/ span 1;
+    
+}
+.login-btn span{
+    position: absolute;
+    background-color: red;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    color: #fff;
+    top: 10px;
+    right: 60px;
+}
+.btn{
+    cursor: pointer;
+    padding: .8rem;
+    font-size: 1rem;
+    font-weight: 600;
+    outline: none;
+    background-color: var(--white);
+    border: 1px solid var(--white);
+    border-radius: 25px;
+    color: var(--bg-color);
+}
+
+.container{
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    max-width: 90vw;
+}
+.row{
+    display: flex;
+    gap: 20px;
+}
+
+.col-6{
+    width: 50%;
+}
+
+.single-product{
+    width: 1080px;
+    position: relative;
+}
+
+.single-product .product-image{
+    width: 100%;
+}
+
+.product-image .product-image-main{
+    position: relative;
+    display: block;
+    height: 480px;
+    background: #E5E7EB;
+    padding: 10px;
+}
+
+.product-image-main img{
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.product-image-slider{
+    display: flex;
+    gap: 10px;
+    margin: 10px 0;
+}
+
+.product-image-slider img{
+    width: 90px;
+    height: 90px;
+    background: #E5E7EB;
+    padding: 6px;
+    cursor: pointer;
+}
+
+
+
+
+.product-title{
+    margin-top: 100px;
+
+}
+.product-title h2{
+    font-size: 32px;
+    line-height: 2.4rem;
+    font-weight: 700;
+    letter-spacing: -0.02rem;
+}
+
+.product-price{
+    display: flex;
+    position: relative;
+    margin: 10px 0;
+    align-items: center;
+}
+.product-price #price{
+    font-size: 48px;
+    font-weight: 700;
+}
+
+.product-price #discount{
+    font-size: 22px;
+    font-weight: 500;
+    color: black;
+    margin-left: 12px;
+}
+
+.product-details{
+    margin: 10px 0;
+}
+.product-details h3{
+    font-size: 18px;
+    font-weight: 500;
+}
+.product-details p{
+    margin: 5px 0;
+    font-size: 14px;
+    line-height: 1.2rem;
+}
+
+
+.divider{
+    display: block;
+    height: 1px;
+    width: 70%;
+    background: #48484830; 
+    margin: 20px 0;
+}
+
+.product-btn-group{
+    display: flex;
+    gap: 15px;
+}
+.product-btn-group .button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    padding: 10px 24px;
+    font-size: 16px;
+    font-weight: 500;
+}
+.product-btn-group .buy-now{
+    background-color: var(--bg-color);
+    color: black;
+    border: 1px solid var(--accent-color);
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.product-btn-group .buy-now i{
+    font-size: 20px;
+}
+
+
+.product-btn-group .add-cart{
+    
+    background-color: var(--bg-color);
+    color: black;
+    border-radius: 4px;
+    cursor: pointer;
+}
+.product-btn-group .add-cart i{
+    font-size: 20px;
+}
+
+.cartTab{
+    width: 400px;
+    background-color: #353432;
+    color: #eee;
+    position: fixed;
+    top: 0;
+    right: -400px;
+    bottom: 0;
+    display: grid;
+    grid-template-rows: 70px 1fr 70px 70px;
+    transition: .5s;
+}
+body.showCart .cartTab{
+    right: 0;
+}
+body.showCart .container{
+    transform: translateX(-250px);
+}
+.cartTab h1{
+    padding: 20px;
+    margin: 0;
+    font-weight: 300;
+}
+.cartTab .btn{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+.cartTab .btn a{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+}
+.cartTab button,a{
+    background-color: #E8BC0E;
+    border: none;
+    font-family: Poppins;
+    font-size: 22px;
+    font-weight: 500;
+    cursor: pointer;
+}
+.cartTab .close{
+    background-color: #eee;
+}
+.listCart .item img{
+    width: 100%;
+    
+}
+.listCart .item{
+    display: grid;
+    grid-template-columns: 70px 150px 50px 1fr;
+    gap: 10px;
+    text-align: center;
+    align-items: center;
+}
+.listCart .quantity span{
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    background-color: #eee;
+    border-radius: 50%;
+    color: #555;
+    cursor: pointer;
+}
+.listCart .quantity span:nth-child(2){
+    background-color: transparent;
+    color: #eee;
+    cursor: auto;
+}
+.listCart .item:nth-child(even){
+    background-color: #eee1;
+}
+.listCart{
+    overflow: auto;
+}
+.listCart::-webkit-scrollbar{
+    width: 0;
+}
+.Total{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+.Total p{
+    font-size: 25px;
+    padding-left: 2rem;
+    font-weight: 600;
+}
+/* Poovarasan review */
+/* @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap'); */
+
+.rating-box {
+    /* font-family: "Roboto", sans-serif; */
+    padding:10px;
+    margin-top:-14.5%  ;
+    margin-left:46.5%  ;
+    width:50%;
+   display: flex;
+   flex-direction: column;
+   border-radius: 2px;
+   background-color: rgba(169, 169, 169, 0.137);
+}
+.rating-box h3{
+    font-size: 18px;
+    color:var(--bg-color);
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+.rating-box .star ,#userstar {
+    display: flex;
+    gap:5px;
+    margin-bottom: 20px;
+    justify-content:flex-start;
+}
+.star i{
+    font-size: 20px;
+    opacity: .2;
+}
+.rating-box p{
+    margin-left: 25px;
+    color:var(--bg-color);
+}
+.star i.active{
+    color: gold;
+    opacity: 1.5;
+}
+#rateno{
+    font-weight:400 ;
+}
+.writerev p{
+    margin-left: 0px;
+    font-size: 15px;
+    font-weight: 450;
+}
+#addreview{
+    cursor: pointer;
+    margin: 4% 30%;
+    width: 40%;
+    height: 16%;
+    padding: 5px;
+    border-radius: 15px;
+ }
+#addreview:hover{
+    background-color: rgb(196, 205, 212);
+ }
+#description{
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+}
+#submitrev{
+    font-weight: 700;
+    margin: 1%;
+    margin-left: 28.5%;
+    width: 40%;
+    padding: 5px;
+    border-radius: 3px;
+    background-color: #fb641b;
+    border: none; 
+    color: #fff;
+}
+#username{
+    font-size: 18.5px;
+    font-weight: 500;
+}
+#userreview{
+    margin-top: 7px;
+    font-size: 14px;
+    text-indent: 5px;
+    
+}
+.useridreview{
+    /* display:none; */
+    margin-top: 7px;
+    height: auto;
+    width: 100%;
+    padding: 15px;
+    background-color: rgb(204, 203, 203);
+    border-radius: 2.5px;
+}
+
+
+/* popup review */
+#poprating-box {
+    padding:10px;
+    margin-left: 30% ;
+    /* margin-top: 55% ; */
+    width:40%;
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(169, 169, 169, 0.137);
+    position: relative;
+
+}
+#popup{
+    display: none;
+}
+
+/* #popup .active{
+    display: block;
+} */
+
+#poprating-box h3{
+    font-size: 20px;
+    color:rgb(25, 105, 255);
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+#poprating-box .popstar  {
+    display: flex;
+    gap:5px;
+    margin-bottom: 20px;
+    justify-content:flex-start;
+}
+.popstar i{
+    font-size: 20px;
+    opacity: .2;
+}
+#poprating-box p{
+    margin-left: 25px;
+    color:rgb(25, 105, 255);
+}
+.popstar i.active{
+    color:  rgba(25, 105, 255, 0.637);
+    opacity: 1.5;
+}
+#poprateno{
+    font-weight:500 ;
+}
+.popwriterev{
+    display: flex;
+    flex-direction: column;
+}
+.popwriterev p{
+    margin-left: 0px;
+    font-size: 15px;
+    font-weight: 450;
+}
+#popdescription{
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+}
+#popsubmitrev{
+    font-weight: 700;
+    margin: 1%;
+    margin-left: 28.5%;
+    width: 40%;
+    padding: 5px;
+    border-radius: 3px;
+    background-color: #fb641b;
+    border: none; 
+    color: #fff;
+}
+
+#close{
+    position: absolute;
+    top: .2%;
+    right: .2%;
+    width: 20px;
+    height: 20px;
+    background-color: red;
+    border-radius: 2px;
+    border: none;
+    color: #fff;
+    font-size: 15px;
+}
+
+
+
+/* popup review */
+
+/* Poovarsan review */
+@media screen and (max-width:800px) {
+    
+    .container{
+        padding: 20px;
+        height: auto;
+    }
+    .row{
+        display: block;
+    }
+
+    .col-6{
+        width: 100%;
+        display: block;
+    }
+    .single-product{
+        width: 100%;
+        position: relative;
+    }
+
+    .product-image .product-image-main{
+        width: 100%;
+        height: 280px;
+    }
+    .product-image-slider{
+        gap: 5px;
+    }
+
+    .product-title h2{
+        font-size: 24px;
+        line-height: 1.6rem;
+    } 
+    .product-btn-group{
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+    /* .rating-box {
+        margin: 0%;
+        margin-left: 3.5%;
+        display: flex;
+        justify-content: flex-start;
+    } */
+}
